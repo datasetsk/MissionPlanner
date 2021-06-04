@@ -37,6 +37,11 @@ namespace Dowding
             get { return _Author; }
         }
 
+        public static bool IsAlive
+        {
+            get { return DowdingPlugin.ws != null && DowdingPlugin.ws.State == WebSocket4Net.WebSocketState.Open; }
+        }
+
         public override bool Exit()
         {
             return true;
@@ -60,7 +65,7 @@ namespace Dowding
 
         public static void Start()
         {
-            Task.Run(() =>
+            Task.Run(async () =>
             {
                 try
                 {
@@ -69,8 +74,7 @@ namespace Dowding
                         Settings.Instance.ContainsKey("Dowding_password") && 
                         Settings.Instance.ContainsKey("Dowding_server"))
                     {
-                        dowd.Auth( Settings.Instance["Dowding_username"], Settings.Instance["Dowding_password"], Settings.Instance["Dowding_server"])
-                            .Wait();
+                        await dowd.Auth( Settings.Instance["Dowding_username"], new Crypto().DecryptString(Settings.Instance["Dowding_password"]), Settings.Instance["Dowding_server"]);
                     }
                     else if (Settings.Instance.ContainsKey("Dowding_token") && 
                              Settings.Instance.ContainsKey("Dowding_server"))
@@ -82,7 +86,7 @@ namespace Dowding
                         CustomMessageBox.Show("Dowding invalid settings");
                     }
 
-                    dowd.Start(Settings.Instance["Dowding_server"]).Wait();
+                    ws = await dowd.Start(Settings.Instance["Dowding_server"]);
                 }
                 catch
                 {
@@ -96,7 +100,6 @@ namespace Dowding
             MainV2.instance.Invoke((Action)
                 delegate
                 {
-
                     System.Windows.Forms.ToolStripMenuItem men = new System.Windows.Forms.ToolStripMenuItem() { Text = "Dowding" };
                     men.Click += men_Click;
                     Host.FDMenuMap.Items.Add(men);
@@ -119,7 +122,7 @@ namespace Dowding
                 Host.FDGMapControl.Overlays.Add(overlay);
                 Host.FDGMapControl.OnMarkerClick += (item, args) =>
                 {
-                    if (item.Overlay == overlay && item is GMarkerGoogle)
+                    if (item.Overlay == overlay && item is GMarkerGoogle && item.Tag is VehicleTick)
                     {
                         if (target != null)
                         {
@@ -128,7 +131,8 @@ namespace Dowding
                         }
                         target = (GMarkerGoogle)item;
                         target.ToolTipMode = MarkerTooltipMode.Always;
-                        target.ToolTipText = "Tracking";
+                        var vt = (VehicleTick) item.Tag;
+                        target.ToolTipText = "Tracking\r\nVendor: " + vt.Vendor + "\r\nModel: " + vt.Model + "\r\nSerial: " + vt.Serial;
                     }
                 };
             }
@@ -157,6 +161,7 @@ namespace Dowding
                             new PointLatLngAlt((double) tick.Lat, (double) tick.Lon, (double) tick.Hae));
                     }
 
+                    // hide if older than 120 seconds
                     var time = ((int) (tick.Ts / 1000)).fromUnixTime();
 
                     if (time > DateTime.UtcNow.AddSeconds(-120))
@@ -165,21 +170,38 @@ namespace Dowding
                     }
                     else
                     {
-                       mapMarker.IsVisible = false;
+                        mapMarker.IsVisible = false;
                     }
 
+                    // hide if more than 100km from our map center
+                    if (new PointLatLngAlt(FlightData.instance.gMapControl1.Position).GetDistance(mapMarker.Position) > 1000*100)
+                        mapMarker.IsVisible = false;
                 });
 
             return true;
         }
 
         private GMarkerGoogle target;
+        internal static WebSocket4Net.WebSocket ws;
 
         public static event EventHandler<PointLatLngAlt> UpdateOutput;
 
         private void men_Click(object sender, EventArgs e)
         {
             new DowdingUI().ShowUserControl();
+        }
+
+        public static void Stop()
+        {
+            try
+            {
+                if (ws != null)
+                    ws.Close();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

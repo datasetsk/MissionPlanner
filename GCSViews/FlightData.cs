@@ -148,7 +148,8 @@ namespace MissionPlanner.GCSViews
             Preflight_Reboot_Shutdown,
             Trigger_Camera,
             System_Time,
-            Battery_Reset
+            Battery_Reset,
+            Do_Start_ADSB_Out_Ident
         }
 
         public FlightData()
@@ -2640,7 +2641,7 @@ namespace MissionPlanner.GCSViews
             }
 
             max_length += 15;
-            fields.Sort((a, b) => a.Item2.CompareTo(b.Item2));
+            fields.Sort((a, b) => CurrentState.StringCompareTo(a.Item2, b.Item2));
 
             int col_count = (int) (Screen.FromControl(this).Bounds.Width * 0.8f) / max_length;
             int row_count = fields.Count / col_count + ((fields.Count % col_count == 0) ? 0 : 1);
@@ -5156,18 +5157,18 @@ namespace MissionPlanner.GCSViews
 
             foreach (var field in list)
             {
-                g.DrawString(field, this.Font, br, new RectangleF(x, y, 95, 15));
+                g.DrawString(field, this.Font, br, new RectangleF(x, y, 120, 15));
 
                 if (cs != null)
                     g.DrawString(typeof(CurrentState).GetProperty(field).GetValue(cs)?.ToString(), this.Font,
-                        br, new RectangleF(x + 95, y, 50, 15));
+                        br, new RectangleF(x + 120, y, 50, 15));
 
                 x += 0;
                 y += 15;
 
                 if (y > tabStatus.Height - 30)
                 {
-                    x += 165;
+                    x += 190;
                     y = 10;
                 }
             }

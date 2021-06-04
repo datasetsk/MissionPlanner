@@ -3,17 +3,43 @@ using MissionPlanner.ArduPilot;
 using MissionPlanner.Utilities;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization;
 using MissionPlanner.ArduPilot.Mavlink;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MissionPlanner
 {
     public class MAVState : MAVLink, IDisposable
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        public string ParamCachePath
+        {
+            get
+            {
+                try
+                {
+                    return Path.Combine(Settings.GetDataDirectory(), "paramcache",
+                        aptype.ToString(),
+                        cs.uid2,
+                        sysid.ToString(),
+                        compid.ToString(),
+                        "param.json");
+                }   
+                catch (Exception e)
+                {
+                    log.Error(e);
+                }
+
+                return "";
+            }
+        }
 
         [JsonIgnore]
         [IgnoreDataMember]
@@ -30,6 +56,23 @@ namespace MissionPlanner
             sendlinkid = (byte)(new Random().Next(256));
             signing = false;
             this.param = new MAVLinkParamList();
+            this.param.PropertyChanged += (s, a) =>
+            {
+                Task.Run(() =>
+                {
+                    try
+                    {
+                        if (cs.uid2 == null || cs.uid2 == "" || aptype == null || sysid == 0)
+                            return;
+                        Directory.CreateDirectory(Path.GetDirectoryName(ParamCachePath));
+                        File.WriteAllText(ParamCachePath, param.ToJSON());
+                    }
+                    catch (Exception e)
+                    {
+                        log.Error(e);
+                    }
+                });
+            };
             this.packets = new Dictionary<uint, Queue<MAVLinkMessage>>(byte.MaxValue);
             this.packetsLast = new Dictionary<uint, MAVLinkMessage>(byte.MaxValue);
             this.aptype = 0;
@@ -70,7 +113,7 @@ namespace MissionPlanner
         /// </summary>
         public CurrentState cs = new CurrentState();
 
-        private byte _sysid;
+        private byte _sysid = 0;
         /// <summary>
         /// mavlink remote sysid
         /// </summary>
@@ -83,7 +126,7 @@ namespace MissionPlanner
         /// <summary>
         /// mavlink remove compid
         /// </summary>
-        public byte compid { get; set; }
+        public byte compid { get; set; } = 0;
 
         public byte linkid { get; set; }
 
@@ -113,8 +156,17 @@ namespace MissionPlanner
         /// </summary>
         [JsonIgnore]
         [IgnoreDataMember]
-        public MAVLinkParamList param { get; set; }
-        [JsonIgnore]
+        public MAVLinkParamList param
+        {
+            get;
+            private set;
+
+        }
+
+        /// <summary>
+        /// cache of all Types seen
+        /// </summary>
+        [JsonIgnore] 
         [IgnoreDataMember]
         public Dictionary<string, MAV_PARAM_TYPE> param_types = new Dictionary<string, MAV_PARAM_TYPE>();
 
