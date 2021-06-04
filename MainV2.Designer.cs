@@ -50,11 +50,19 @@ namespace MissionPlanner
             this.MenuSimulation = new System.Windows.Forms.ToolStripButton();
             this.MenuHelp = new System.Windows.Forms.ToolStripButton();
             this.MenuConnect = new System.Windows.Forms.ToolStripButton();
+            this.nwtype = new System.Windows.Forms.ToolStripComboBox();
+            this.nwport = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripConnectionControl = new MissionPlanner.Controls.ToolStripConnectionControl();
             this.MenuArduPilot = new System.Windows.Forms.ToolStripButton();
-            this.menu = new MissionPlanner.Controls.MyButton();
+            this.Menuvideoformattext = new System.Windows.Forms.ToolStripTextBox();
+            this.MenuVideoFormat = new System.Windows.Forms.ToolStripComboBox();
+            this.Menuvideodevicetext = new System.Windows.Forms.ToolStripTextBox();
+            this.MenuVideoDevice = new System.Windows.Forms.ToolStripComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.status1 = new MissionPlanner.Controls.Status();
+            this.menu = new MissionPlanner.Controls.MyButton();
             this.MainMenu.SuspendLayout();
             this.CTX_mainmenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,8 +82,14 @@ namespace MissionPlanner
             this.MenuSimulation,
             this.MenuHelp,
             this.MenuConnect,
+            this.nwtype,
+            this.nwport,
             this.toolStripConnectionControl,
-            this.MenuArduPilot});
+            this.MenuArduPilot,
+            this.Menuvideoformattext,
+            this.MenuVideoFormat,
+            this.Menuvideodevicetext,
+            this.MenuVideoDevice});
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.ShowItemToolTips = true;
             this.MainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MainMenu_ItemClicked);
@@ -182,6 +196,22 @@ namespace MissionPlanner
             this.MenuConnect.Name = "MenuConnect";
             this.MenuConnect.Click += new System.EventHandler(this.MenuConnect_Click);
             // 
+            // nwtype
+            // 
+            this.nwtype.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.nwtype.BackColor = System.Drawing.SystemColors.MenuText;
+            resources.ApplyResources(this.nwtype, "nwtype");
+            this.nwtype.ForeColor = System.Drawing.SystemColors.Window;
+            this.nwtype.Name = "nwtype";
+            // 
+            // nwport
+            // 
+            this.nwport.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.nwport.BackColor = System.Drawing.SystemColors.MenuText;
+            resources.ApplyResources(this.nwport, "nwport");
+            this.nwport.ForeColor = System.Drawing.SystemColors.Window;
+            this.nwport.Name = "nwport";
+            // 
             // toolStripConnectionControl
             // 
             this.toolStripConnectionControl.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -196,12 +226,69 @@ namespace MissionPlanner
             this.MenuArduPilot.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             resources.ApplyResources(this.MenuArduPilot, "MenuArduPilot");
             this.MenuArduPilot.BackColor = System.Drawing.Color.Transparent;
+            this.MenuArduPilot.BackgroundImage = global::MissionPlanner.Properties.Resources._0d92fed790a3a70170e61a86db103f399a595c70;
             this.MenuArduPilot.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.MenuArduPilot.ForeColor = System.Drawing.Color.White;
-            this.MenuArduPilot.Image = global::MissionPlanner.Properties.Resources._0d92fed790a3a70170e61a86db103f399a595c70;
             this.MenuArduPilot.Margin = new System.Windows.Forms.Padding(0);
             this.MenuArduPilot.Name = "MenuArduPilot";
             this.MenuArduPilot.Click += new System.EventHandler(this.MenuArduPilot_Click);
+            // 
+            // Menuvideoformattext
+            // 
+            this.Menuvideoformattext.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.Menuvideoformattext, "Menuvideoformattext");
+            this.Menuvideoformattext.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Menuvideoformattext.Name = "Menuvideoformattext";
+            this.Menuvideoformattext.ReadOnly = true;
+            // 
+            // MenuVideoFormat
+            // 
+            this.MenuVideoFormat.BackColor = System.Drawing.SystemColors.MenuText;
+            resources.ApplyResources(this.MenuVideoFormat, "MenuVideoFormat");
+            this.MenuVideoFormat.ForeColor = System.Drawing.SystemColors.Window;
+            this.MenuVideoFormat.Name = "MenuVideoFormat";
+            // 
+            // Menuvideodevicetext
+            // 
+            this.Menuvideodevicetext.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            resources.ApplyResources(this.Menuvideodevicetext, "Menuvideodevicetext");
+            this.Menuvideodevicetext.ForeColor = System.Drawing.SystemColors.Window;
+            this.Menuvideodevicetext.Name = "Menuvideodevicetext";
+            // 
+            // MenuVideoDevice
+            // 
+            this.MenuVideoDevice.BackColor = System.Drawing.SystemColors.MenuText;
+            resources.ApplyResources(this.MenuVideoDevice, "MenuVideoDevice");
+            this.MenuVideoDevice.ForeColor = System.Drawing.SystemColors.Window;
+            this.MenuVideoDevice.Name = "MenuVideoDevice";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.status1);
+            this.panel1.Controls.Add(this.MainMenu);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // status1
+            // 
+            resources.ApplyResources(this.status1, "status1");
+            this.status1.Name = "status1";
+            this.status1.Percent = 0D;
             // 
             // menu
             // 
@@ -210,36 +297,23 @@ namespace MissionPlanner
             this.menu.UseVisualStyleBackColor = true;
             this.menu.MouseEnter += new System.EventHandler(this.menu_MouseEnter);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.status1);
-            this.panel1.Controls.Add(this.MainMenu);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
-            // 
-            // status1
-            // 
-            resources.ApplyResources(this.status1, "status1");
-            this.status1.Name = "status1";
-            this.status1.Percent = 0D;
-            // 
             // MainV2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
             this.KeyPreview = true;
             this.MainMenuStrip = this.MainMenu;
             this.Name = "MainV2";
+            this.Opacity = 0.98D;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainV2_KeyDown);
             this.Resize += new System.EventHandler(this.MainV2_Resize);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.CTX_mainmenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +339,13 @@ namespace MissionPlanner
         public System.Windows.Forms.ToolStripButton MenuHelp;
         public System.Windows.Forms.ToolStripButton MenuArduPilot;
         public Controls.Status status1;
+        private System.Windows.Forms.ToolStripTextBox Menuvideoformattext;
+        private System.Windows.Forms.ToolStripComboBox MenuVideoFormat;
+        private System.Windows.Forms.ToolStripTextBox Menuvideodevicetext;
+        private System.Windows.Forms.ToolStripComboBox MenuVideoDevice;
+        private System.Windows.Forms.ToolStripComboBox nwtype;
+        private System.Windows.Forms.ToolStripComboBox nwport;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

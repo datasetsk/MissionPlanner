@@ -1645,7 +1645,7 @@ namespace MissionPlanner.GCSViews
 
         void cam_camimage(Image camimage)
         {
-            hud1.bgimage = camimage;
+            hud2.bgimage = camimage;
         }
 
         private void CB_tuning_CheckedChanged(object sender, EventArgs e)
