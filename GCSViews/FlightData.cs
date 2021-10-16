@@ -305,13 +305,13 @@ namespace MissionPlanner.GCSViews
             }
 
             MainV2.comPort.ParamListChanged += FlightData_ParentChanged;
-
+            /*
             //HUD Theming, color setup
             myhud.groundColor1 = ThemeManager.HudGroundTop;
             myhud.groundColor2 = ThemeManager.HudGroundBot;
             myhud.skyColor1 = ThemeManager.HudSkyTop;
             myhud.skyColor2 = ThemeManager.HudSkyBot;
-            myhud.hudcolor = ThemeManager.HudText;
+            myhud.hudcolor = ThemeManager.HudText;*/
 
         }
 
@@ -2536,9 +2536,9 @@ namespace MissionPlanner.GCSViews
             }
             else
             {
-                // green
-                hud1.groundColor1 = Color.FromArgb(0x9b, 0xb8, 0x24);
-                hud1.groundColor2 = Color.FromArgb(0x41, 0x4f, 0x07);
+                // orange
+                hud1.groundColor1 = Color.FromArgb(255, 128, 0);
+                hud1.groundColor2 = Color.FromArgb(128, 64, 0);
             }
 
             Settings.config["groundColorToolStripMenuItem"] = groundColorToolStripMenuItem.Checked.ToString();
@@ -4391,9 +4391,9 @@ namespace MissionPlanner.GCSViews
                 //  tabStatus.Controls.Remove(temp);
                 // }
 
-                if (tabControlactions.SelectedTab == tabQuick)
-                {
-                }
+               // if (tabControlactions.SelectedTab == tabQuick)
+               // {
+               // }
             }
         }
 
@@ -4462,7 +4462,7 @@ namespace MissionPlanner.GCSViews
 
         private void tabQuick_Resize(object sender, EventArgs e)
         {
-            tableLayoutPanelQuick.Width = tabQuick.Width;
+            //tableLayoutPanelQuick.Width = tabQuick.Width;
             tableLayoutPanelQuick.AutoScroll = false;
         }
 
@@ -4670,18 +4670,17 @@ namespace MissionPlanner.GCSViews
                     MainV2.comPort.MAV.cs.UpdateCurrentSettings(
                         bindingSourceHud.UpdateDataSource(MainV2.comPort.MAV.cs));
                     //Console.WriteLine("DONE ");
-
+                    MainV2.comPort.MAV.cs.UpdateCurrentSettings(
+                       bindingSourceQuickTab.UpdateDataSource(MainV2.comPort.MAV.cs));
                     if (tabControlactions.SelectedTab == tabStatus)
                     {
                         MainV2.comPort.MAV.cs.UpdateCurrentSettings(
                             bindingSourceStatusTab.UpdateDataSource(MainV2.comPort.MAV.cs));
                         this.tabStatus.Invalidate();
                     }
-                    else if (tabControlactions.SelectedTab == tabQuick)
-                    {
-                        MainV2.comPort.MAV.cs.UpdateCurrentSettings(
-                            bindingSourceQuickTab.UpdateDataSource(MainV2.comPort.MAV.cs));
-                    }
+                  
+                       
+                  
                     else if (tabControlactions.SelectedTab == tabGauges)
                     {
                         MainV2.comPort.MAV.cs.UpdateCurrentSettings(
@@ -5247,9 +5246,9 @@ namespace MissionPlanner.GCSViews
             tab.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 
             dropout.Text = "Flight DATA";
-            tabControlactions.Controls.Remove(tabQuick);
-            tab.Controls.Add(tabQuick);
-            tabQuick.BorderStyle = BorderStyle.Fixed3D;
+            //tabControlactions.Controls.Remove(tabQuick);
+            //tab.Controls.Add(tabQuick);
+            //tabQuick.BorderStyle = BorderStyle.Fixed3D;
             dropout.FormClosed += dropoutQuick_FormClosed;
             dropout.Controls.Add(tab);
             dropout.RestoreStartupLocation();
@@ -5261,8 +5260,8 @@ namespace MissionPlanner.GCSViews
         void dropoutQuick_FormClosed(object sender, FormClosedEventArgs e)
         {
             (sender as Form).SaveStartupLocation();
-            tabControlactions.Controls.Add(tabQuick);
-            tabControlactions.SelectedTab = tabQuick;
+            //tabControlactions.Controls.Add(tabQuick);
+            //tabControlactions.SelectedTab = tabQuick;
             tabQuickDetached = false;
             contextMenuStripQuickView.Items["undockToolStripMenuItem"].Visible = true;
         }

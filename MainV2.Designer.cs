@@ -226,7 +226,6 @@ namespace MissionPlanner
             this.MenuArduPilot.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             resources.ApplyResources(this.MenuArduPilot, "MenuArduPilot");
             this.MenuArduPilot.BackColor = System.Drawing.Color.Transparent;
-            this.MenuArduPilot.BackgroundImage = global::MissionPlanner.Properties.Resources._0d92fed790a3a70170e61a86db103f399a595c70;
             this.MenuArduPilot.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.MenuArduPilot.ForeColor = System.Drawing.Color.White;
             this.MenuArduPilot.Margin = new System.Windows.Forms.Padding(0);

@@ -567,14 +567,14 @@ namespace MissionPlanner
             if (MainV2.instance.FlightData != null)
             {
                 TabControl t = MainV2.instance.FlightData.tabControlactions;
-                if (DisplayConfiguration.displayQuickTab && !t.TabPages.Contains(FlightData.tabQuick))
+               /* if (DisplayConfiguration.displayQuickTab && !t.TabPages.Contains(FlightData.tabQuick))
                 {
                     t.TabPages.Add(FlightData.tabQuick);
                 }
                 else if (!DisplayConfiguration.displayQuickTab && t.TabPages.Contains(FlightData.tabQuick))
                 {
                     t.TabPages.Remove(FlightData.tabQuick);
-                }
+                }*/
                 if (DisplayConfiguration.displayPreFlightTab && !t.TabPages.Contains(FlightData.tabPagePreFlight))
                 {
                     t.TabPages.Add(FlightData.tabPagePreFlight);
@@ -4589,7 +4589,7 @@ namespace MissionPlanner
             if (FlightData == null) return;
 
             //Find panel with
-            foreach (var q in FlightData.tabQuick.Controls["tableLayoutPanelQuick"].Controls)
+            foreach (var q in FlightData.Controls["tableLayoutPanelQuick"].Controls)
             {
                 QuickView qv = (QuickView)q;
 
