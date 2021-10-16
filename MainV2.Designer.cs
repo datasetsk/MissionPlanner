@@ -291,8 +291,13 @@ namespace MissionPlanner
             // 
             // menu
             // 
+            this.menu.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.menu.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.menu.ColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))), ((int)(((byte)(3)))));
             resources.ApplyResources(this.menu, "menu");
             this.menu.Name = "menu";
+            this.menu.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.menu.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.menu.UseVisualStyleBackColor = true;
             this.menu.MouseEnter += new System.EventHandler(this.menu_MouseEnter);
             // 
