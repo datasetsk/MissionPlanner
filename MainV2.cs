@@ -545,6 +545,7 @@ namespace MissionPlanner
             MenuSimulation.Visible = false;
             MenuHelp.Visible = false;
             MenuConfigTune.Visible = false;
+            MenuInitConfig.Visible = false;
             //toolStripConnectionControl.Visible = false;
             MissionPlanner.Controls.BackstageView.BackstageView.Advanced = DisplayConfiguration.isAdvancedMode;
 
