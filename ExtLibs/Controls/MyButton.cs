@@ -30,10 +30,10 @@ namespace MissionPlanner.Controls
         [DefaultValue(typeof(Color), "0x94, 0xc1, 0x1f")]
         public Color BGGradTop { get { return _BGGradTop; } set { _BGGradTop = value; this.Invalidate(); } }
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Colors")]
-        [DefaultValue(typeof(Color), "0xcd, 0xe2, 0x96")]
+        [DefaultValue(typeof(Color), "215, 139, 252")]
         public Color BGGradBot { get { return _BGGradBot; } set { _BGGradBot = value; this.Invalidate(); } }
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Colors")]
-        [DefaultValue(typeof(Color), "73, 0x2b, 0x3a, 0x03")]
+        [DefaultValue(typeof(Color), "124, 145, 252")]
         public Color ColorNotEnabled { get { return _ColorNotEnabled; } set { _ColorNotEnabled = value; this.Invalidate(); } }
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Colors")]
         [DefaultValue(typeof(Color), "73, 0x2b, 0x3a, 0x03")]
@@ -47,16 +47,16 @@ namespace MissionPlanner.Controls
         [DefaultValue(typeof(Color), "0x40, 0x57, 0x04")]
         public Color TextColor { get { return _TextColor; } set { _TextColor = value; this.Invalidate(); } }
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Colors")]
-        [DefaultValue(typeof(Color), "0x79, 0x94, 0x29")]
+        [DefaultValue(typeof(Color), "255,255,255")]
         public Color Outline { get { return _Outline; } set { _Outline = value; this.Invalidate(); } }
 
         protected override Size DefaultSize => base.DefaultSize;
 
         public MyButton()
         {
-            _BGGradTop = Color.FromArgb(0x94, 0xc1, 0x1f);
-            _BGGradBot = Color.FromArgb(0xcd, 0xe2, 0x96);
-            _TextColor = Color.FromArgb(0x40, 0x57, 0x04);
+            _BGGradTop = Color.FromArgb(215, 139, 252);
+            _BGGradBot = Color.FromArgb(124, 145, 252);
+            _TextColor = Color.FromArgb(255,255,255);
             _Outline = Color.FromArgb(0x79, 0x94, 0x29);
             _ColorNotEnabled = Color.FromArgb(73, 0x2b, 0x3a, 0x03);
             _ColorMouseOver = Color.FromArgb(73, 0x2b, 0x3a, 0x03);

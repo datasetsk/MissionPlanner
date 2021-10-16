@@ -69,9 +69,9 @@ namespace MissionPlanner.Utilities
             colors.Add("Control Background", Color.FromArgb(0x43, 0x44, 0x45), "ControlBGColor");		// This changes the colour of the sub menu backgrounds
             colors.Add("Text", Color.White, "TextColor");										// This changes the colour of text
             colors.Add("TextBox Background", Color.FromArgb(0x43, 0x44, 0x45), "BGColorTextBox");		// This changes the colour of the background of textboxes
-            colors.Add("Button Text", Color.FromArgb(64, 87, 4), "ButtonTextColor");				// This changes the colour of button text
-            colors.Add("Button Background top", Color.FromArgb(148, 193, 31), "ButBG");								// This changes the colour of button backgrounds (Top)
-            colors.Add("Button Background bottom", Color.FromArgb(205, 226, 150), "ButBGBot");						// This changes the colour of button backgrounds (Bot)
+            colors.Add("Button Text", Color.FromArgb(255,255,255), "ButtonTextColor");				// This changes the colour of button text
+            colors.Add("Button Background top", Color.FromArgb(215, 139, 252), "ButBG");								// This changes the colour of button backgrounds (Top)
+            colors.Add("Button Background bottom", Color.FromArgb(124, 145, 252), "ButBGBot");						// This changes the colour of button backgrounds (Bot)
             colors.Add("ProgressBar Top", Color.FromArgb(102, 139, 26), "ProgressBarColorTop");	// These three variables change the colours of progress bars
             colors.Add("ProgressBar Bottom", Color.FromArgb(124, 164, 40), "ProgressBarColorBot");
             colors.Add("ProgressBar Outline", Color.FromArgb(150, 174, 112), "ProgressBarOutlineColor");

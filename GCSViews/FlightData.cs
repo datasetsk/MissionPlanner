@@ -2539,6 +2539,7 @@ namespace MissionPlanner.GCSViews
                 // orange
                 hud1.groundColor1 = Color.DarkGoldenrod;
                 hud1.groundColor2 = Color.RosyBrown;
+
             }
 
             Settings.config["groundColorToolStripMenuItem"] = groundColorToolStripMenuItem.Checked.ToString();
@@ -5264,6 +5265,11 @@ namespace MissionPlanner.GCSViews
             //tabControlactions.SelectedTab = tabQuick;
             tabQuickDetached = false;
             contextMenuStripQuickView.Items["undockToolStripMenuItem"].Visible = true;
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

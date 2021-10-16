@@ -45,26 +45,6 @@
             this.contextMenuStripactionstab = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabActions = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.BUT_abortland = new MissionPlanner.Controls.MyButton();
-            this.BUT_clear_track = new MissionPlanner.Controls.MyButton();
-            this.CMB_action = new System.Windows.Forms.ComboBox();
-            this.BUTactiondo = new MissionPlanner.Controls.MyButton();
-            this.BUT_resumemis = new MissionPlanner.Controls.MyButton();
-            this.CMB_setwp = new System.Windows.Forms.ComboBox();
-            this.BUT_ARM = new MissionPlanner.Controls.MyButton();
-            this.BUT_mountmode = new MissionPlanner.Controls.MyButton();
-            this.BUT_joystick = new MissionPlanner.Controls.MyButton();
-            this.BUT_RAWSensor = new MissionPlanner.Controls.MyButton();
-            this.BUT_Homealt = new MissionPlanner.Controls.MyButton();
-            this.BUTrestartmission = new MissionPlanner.Controls.MyButton();
-            this.CMB_mountmode = new System.Windows.Forms.ComboBox();
-            this.BUT_quickrtl = new MissionPlanner.Controls.MyButton();
-            this.BUT_quickmanual = new MissionPlanner.Controls.MyButton();
-            this.BUT_setwp = new MissionPlanner.Controls.MyButton();
-            this.CMB_modes = new System.Windows.Forms.ComboBox();
-            this.BUT_quickauto = new MissionPlanner.Controls.MyButton();
-            this.BUT_setmode = new MissionPlanner.Controls.MyButton();
             this.tabPagemessages = new System.Windows.Forms.TabPage();
             this.txt_messagebox = new System.Windows.Forms.TextBox();
             this.tabActionsSimple = new System.Windows.Forms.TabPage();
@@ -173,6 +153,26 @@
             this.scriptChecker = new System.Windows.Forms.Timer(this.components);
             this.Messagetabtimer = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
+            this.BUT_setmode = new MissionPlanner.Controls.MyButton();
+            this.BUT_quickauto = new MissionPlanner.Controls.MyButton();
+            this.CMB_modes = new System.Windows.Forms.ComboBox();
+            this.BUT_setwp = new MissionPlanner.Controls.MyButton();
+            this.BUT_quickmanual = new MissionPlanner.Controls.MyButton();
+            this.BUT_quickrtl = new MissionPlanner.Controls.MyButton();
+            this.CMB_mountmode = new System.Windows.Forms.ComboBox();
+            this.BUTrestartmission = new MissionPlanner.Controls.MyButton();
+            this.BUT_Homealt = new MissionPlanner.Controls.MyButton();
+            this.BUT_RAWSensor = new MissionPlanner.Controls.MyButton();
+            this.BUT_joystick = new MissionPlanner.Controls.MyButton();
+            this.BUT_mountmode = new MissionPlanner.Controls.MyButton();
+            this.BUT_ARM = new MissionPlanner.Controls.MyButton();
+            this.CMB_setwp = new System.Windows.Forms.ComboBox();
+            this.BUT_resumemis = new MissionPlanner.Controls.MyButton();
+            this.BUTactiondo = new MissionPlanner.Controls.MyButton();
+            this.CMB_action = new System.Windows.Forms.ComboBox();
+            this.BUT_clear_track = new MissionPlanner.Controls.MyButton();
+            this.BUT_abortland = new MissionPlanner.Controls.MyButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.modifyandSetLoiterRad = new MissionPlanner.Controls.ModifyandSet();
             this.modifyandSetAlt = new MissionPlanner.Controls.ModifyandSet();
             this.modifyandSetSpeed = new MissionPlanner.Controls.ModifyandSet();
@@ -213,7 +213,6 @@
             this.tabControlactions.SuspendLayout();
             this.contextMenuStripactionstab.SuspendLayout();
             this.tabActions.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tabPagemessages.SuspendLayout();
             this.tabActionsSimple.SuspendLayout();
             this.tabPagePreFlight.SuspendLayout();
@@ -246,6 +245,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Zoomlevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceStatusTab)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainH
@@ -749,6 +749,7 @@
             // 
             // tabControlactions
             // 
+            resources.ApplyResources(this.tabControlactions, "tabControlactions");
             this.tabControlactions.ContextMenuStrip = this.contextMenuStripactionstab;
             this.tabControlactions.Controls.Add(this.tabActions);
             this.tabControlactions.Controls.Add(this.tabPagemessages);
@@ -761,7 +762,7 @@
             this.tabControlactions.Controls.Add(this.tabPayload);
             this.tabControlactions.Controls.Add(this.tabTLogs);
             this.tabControlactions.Controls.Add(this.tablogbrowse);
-            resources.ApplyResources(this.tabControlactions, "tabControlactions");
+            this.tabControlactions.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControlactions.Name = "tabControlactions";
             this.tabControlactions.SelectedIndex = 0;
             this.tabControlactions.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
@@ -782,282 +783,11 @@
             // 
             // tabActions
             // 
-            this.tabActions.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.tabActions, "tabActions");
+            this.tabActions.Controls.Add(this.tableLayoutPanel1);
+            this.tabActions.ForeColor = System.Drawing.Color.Transparent;
             this.tabActions.Name = "tabActions";
             this.tabActions.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.BUT_abortland, 4, 4);
-            this.tableLayoutPanel1.Controls.Add(this.modifyandSetLoiterRad, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_clear_track, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.CMB_action, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BUTactiondo, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_resumemis, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.modifyandSetAlt, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.modifyandSetSpeed, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CMB_setwp, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_ARM, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_mountmode, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_joystick, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_RAWSensor, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_Homealt, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BUTrestartmission, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.CMB_mountmode, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_quickrtl, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_quickmanual, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_setwp, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.CMB_modes, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_quickauto, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.BUT_setmode, 1, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // BUT_abortland
-            // 
-            this.BUT_abortland.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_abortland.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_abortland.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_abortland.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_abortland.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_abortland, "BUT_abortland");
-            this.BUT_abortland.Name = "BUT_abortland";
-            this.BUT_abortland.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_abortland, resources.GetString("BUT_abortland.ToolTip"));
-            this.BUT_abortland.UseVisualStyleBackColor = true;
-            this.BUT_abortland.Click += new System.EventHandler(this.BUT_abortland_Click);
-            // 
-            // BUT_clear_track
-            // 
-            this.BUT_clear_track.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_clear_track.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_clear_track.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_clear_track.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_clear_track.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_clear_track, "BUT_clear_track");
-            this.BUT_clear_track.Name = "BUT_clear_track";
-            this.BUT_clear_track.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_clear_track, resources.GetString("BUT_clear_track.ToolTip"));
-            this.BUT_clear_track.UseVisualStyleBackColor = true;
-            this.BUT_clear_track.Click += new System.EventHandler(this.BUT_clear_track_Click);
-            // 
-            // CMB_action
-            // 
-            resources.ApplyResources(this.CMB_action, "CMB_action");
-            this.CMB_action.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMB_action.DropDownWidth = 150;
-            this.CMB_action.FormattingEnabled = true;
-            this.CMB_action.Name = "CMB_action";
-            // 
-            // BUTactiondo
-            // 
-            this.BUTactiondo.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUTactiondo.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUTactiondo.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUTactiondo.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUTactiondo.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUTactiondo, "BUTactiondo");
-            this.BUTactiondo.Name = "BUTactiondo";
-            this.BUTactiondo.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUTactiondo, resources.GetString("BUTactiondo.ToolTip"));
-            this.BUTactiondo.UseVisualStyleBackColor = true;
-            this.BUTactiondo.Click += new System.EventHandler(this.BUTactiondo_Click);
-            // 
-            // BUT_resumemis
-            // 
-            this.BUT_resumemis.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_resumemis.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_resumemis.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_resumemis.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_resumemis.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_resumemis, "BUT_resumemis");
-            this.BUT_resumemis.Name = "BUT_resumemis";
-            this.BUT_resumemis.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.BUT_resumemis.UseVisualStyleBackColor = true;
-            this.BUT_resumemis.Click += new System.EventHandler(this.BUT_resumemis_Click);
-            // 
-            // CMB_setwp
-            // 
-            resources.ApplyResources(this.CMB_setwp, "CMB_setwp");
-            this.CMB_setwp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMB_setwp.DropDownWidth = 150;
-            this.CMB_setwp.FormattingEnabled = true;
-            this.CMB_setwp.Items.AddRange(new object[] {
-            resources.GetString("CMB_setwp.Items")});
-            this.CMB_setwp.Name = "CMB_setwp";
-            this.CMB_setwp.Click += new System.EventHandler(this.CMB_setwp_Click);
-            // 
-            // BUT_ARM
-            // 
-            this.BUT_ARM.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_ARM.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_ARM.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_ARM.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_ARM.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_ARM, "BUT_ARM");
-            this.BUT_ARM.Name = "BUT_ARM";
-            this.BUT_ARM.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_ARM, resources.GetString("BUT_ARM.ToolTip"));
-            this.BUT_ARM.UseVisualStyleBackColor = true;
-            this.BUT_ARM.Click += new System.EventHandler(this.BUT_ARM_Click);
-            // 
-            // BUT_mountmode
-            // 
-            this.BUT_mountmode.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_mountmode.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_mountmode.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_mountmode.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_mountmode.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_mountmode, "BUT_mountmode");
-            this.BUT_mountmode.Name = "BUT_mountmode";
-            this.BUT_mountmode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_mountmode, resources.GetString("BUT_mountmode.ToolTip"));
-            this.BUT_mountmode.UseVisualStyleBackColor = true;
-            this.BUT_mountmode.Click += new System.EventHandler(this.BUT_mountmode_Click);
-            // 
-            // BUT_joystick
-            // 
-            this.BUT_joystick.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_joystick.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_joystick.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_joystick.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_joystick.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_joystick, "BUT_joystick");
-            this.BUT_joystick.Name = "BUT_joystick";
-            this.BUT_joystick.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_joystick, resources.GetString("BUT_joystick.ToolTip"));
-            this.BUT_joystick.UseVisualStyleBackColor = true;
-            this.BUT_joystick.Click += new System.EventHandler(this.BUT_joystick_Click);
-            // 
-            // BUT_RAWSensor
-            // 
-            this.BUT_RAWSensor.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_RAWSensor.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_RAWSensor.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_RAWSensor.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_RAWSensor.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_RAWSensor, "BUT_RAWSensor");
-            this.BUT_RAWSensor.Name = "BUT_RAWSensor";
-            this.BUT_RAWSensor.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_RAWSensor, resources.GetString("BUT_RAWSensor.ToolTip"));
-            this.BUT_RAWSensor.UseVisualStyleBackColor = true;
-            this.BUT_RAWSensor.Click += new System.EventHandler(this.BUT_RAWSensor_Click);
-            // 
-            // BUT_Homealt
-            // 
-            this.BUT_Homealt.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_Homealt.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_Homealt.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_Homealt.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_Homealt.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_Homealt, "BUT_Homealt");
-            this.BUT_Homealt.Name = "BUT_Homealt";
-            this.BUT_Homealt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_Homealt, resources.GetString("BUT_Homealt.ToolTip"));
-            this.BUT_Homealt.UseVisualStyleBackColor = true;
-            this.BUT_Homealt.Click += new System.EventHandler(this.BUT_Homealt_Click);
-            // 
-            // BUTrestartmission
-            // 
-            this.BUTrestartmission.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUTrestartmission.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUTrestartmission.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUTrestartmission.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUTrestartmission.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUTrestartmission, "BUTrestartmission");
-            this.BUTrestartmission.Name = "BUTrestartmission";
-            this.BUTrestartmission.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUTrestartmission, resources.GetString("BUTrestartmission.ToolTip"));
-            this.BUTrestartmission.UseVisualStyleBackColor = true;
-            this.BUTrestartmission.Click += new System.EventHandler(this.BUTrestartmission_Click);
-            // 
-            // CMB_mountmode
-            // 
-            resources.ApplyResources(this.CMB_mountmode, "CMB_mountmode");
-            this.CMB_mountmode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMB_mountmode.DropDownWidth = 150;
-            this.CMB_mountmode.FormattingEnabled = true;
-            this.CMB_mountmode.Name = "CMB_mountmode";
-            // 
-            // BUT_quickrtl
-            // 
-            this.BUT_quickrtl.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_quickrtl.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_quickrtl.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_quickrtl.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_quickrtl.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_quickrtl, "BUT_quickrtl");
-            this.BUT_quickrtl.Name = "BUT_quickrtl";
-            this.BUT_quickrtl.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_quickrtl, resources.GetString("BUT_quickrtl.ToolTip"));
-            this.BUT_quickrtl.UseVisualStyleBackColor = true;
-            this.BUT_quickrtl.Click += new System.EventHandler(this.BUT_quickrtl_Click);
-            // 
-            // BUT_quickmanual
-            // 
-            this.BUT_quickmanual.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_quickmanual.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_quickmanual.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_quickmanual.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_quickmanual.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_quickmanual, "BUT_quickmanual");
-            this.BUT_quickmanual.Name = "BUT_quickmanual";
-            this.BUT_quickmanual.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_quickmanual, resources.GetString("BUT_quickmanual.ToolTip"));
-            this.BUT_quickmanual.UseVisualStyleBackColor = true;
-            this.BUT_quickmanual.Click += new System.EventHandler(this.BUT_quickmanual_Click);
-            // 
-            // BUT_setwp
-            // 
-            this.BUT_setwp.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_setwp.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_setwp.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_setwp.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_setwp.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_setwp, "BUT_setwp");
-            this.BUT_setwp.Name = "BUT_setwp";
-            this.BUT_setwp.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_setwp, resources.GetString("BUT_setwp.ToolTip"));
-            this.BUT_setwp.UseVisualStyleBackColor = true;
-            this.BUT_setwp.Click += new System.EventHandler(this.BUT_setwp_Click);
-            // 
-            // CMB_modes
-            // 
-            resources.ApplyResources(this.CMB_modes, "CMB_modes");
-            this.CMB_modes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CMB_modes.DropDownWidth = 150;
-            this.CMB_modes.FormattingEnabled = true;
-            this.CMB_modes.Name = "CMB_modes";
-            this.CMB_modes.Click += new System.EventHandler(this.CMB_modes_Click);
-            // 
-            // BUT_quickauto
-            // 
-            this.BUT_quickauto.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_quickauto.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_quickauto.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_quickauto.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_quickauto.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_quickauto, "BUT_quickauto");
-            this.BUT_quickauto.Name = "BUT_quickauto";
-            this.BUT_quickauto.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_quickauto, resources.GetString("BUT_quickauto.ToolTip"));
-            this.BUT_quickauto.UseVisualStyleBackColor = true;
-            this.BUT_quickauto.Click += new System.EventHandler(this.BUT_quickauto_Click);
-            // 
-            // BUT_setmode
-            // 
-            this.BUT_setmode.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
-            this.BUT_setmode.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
-            this.BUT_setmode.ColorMouseDown = System.Drawing.Color.Empty;
-            this.BUT_setmode.ColorMouseOver = System.Drawing.Color.Empty;
-            this.BUT_setmode.ColorNotEnabled = System.Drawing.Color.Empty;
-            resources.ApplyResources(this.BUT_setmode, "BUT_setmode");
-            this.BUT_setmode.Name = "BUT_setmode";
-            this.BUT_setmode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.toolTip1.SetToolTip(this.BUT_setmode, resources.GetString("BUT_setmode.ToolTip"));
-            this.BUT_setmode.UseVisualStyleBackColor = true;
-            this.BUT_setmode.Click += new System.EventHandler(this.BUT_setmode_Click);
             // 
             // tabPagemessages
             // 
@@ -1089,6 +819,7 @@
             this.myButton1.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.myButton1, "myButton1");
             this.myButton1.Name = "myButton1";
+            this.myButton1.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.myButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.toolTip1.SetToolTip(this.myButton1, resources.GetString("myButton1.ToolTip"));
             this.myButton1.UseVisualStyleBackColor = true;
@@ -1103,6 +834,7 @@
             this.myButton2.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.myButton2, "myButton2");
             this.myButton2.Name = "myButton2";
+            this.myButton2.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.myButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.toolTip1.SetToolTip(this.myButton2, resources.GetString("myButton2.ToolTip"));
             this.myButton2.UseVisualStyleBackColor = true;
@@ -1117,6 +849,7 @@
             this.myButton3.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.myButton3, "myButton3");
             this.myButton3.Name = "myButton3";
+            this.myButton3.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.myButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.toolTip1.SetToolTip(this.myButton3, resources.GetString("myButton3.ToolTip"));
             this.myButton3.UseVisualStyleBackColor = true;
@@ -1647,6 +1380,7 @@
             this.BUT_edit_selected.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_edit_selected, "BUT_edit_selected");
             this.BUT_edit_selected.Name = "BUT_edit_selected";
+            this.BUT_edit_selected.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_edit_selected.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_edit_selected.UseVisualStyleBackColor = true;
             this.BUT_edit_selected.Click += new System.EventHandler(this.BUT_edit_selected_Click);
@@ -1665,6 +1399,7 @@
             this.BUT_run_script.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_run_script, "BUT_run_script");
             this.BUT_run_script.Name = "BUT_run_script";
+            this.BUT_run_script.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_run_script.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_run_script.UseVisualStyleBackColor = true;
             this.BUT_run_script.Click += new System.EventHandler(this.BUT_run_script_Click);
@@ -1678,6 +1413,7 @@
             this.BUT_abort_script.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_abort_script, "BUT_abort_script");
             this.BUT_abort_script.Name = "BUT_abort_script";
+            this.BUT_abort_script.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_abort_script.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_abort_script.UseVisualStyleBackColor = true;
             this.BUT_abort_script.Click += new System.EventHandler(this.BUT_abort_script_Click);
@@ -1696,6 +1432,7 @@
             this.BUT_select_script.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_select_script, "BUT_select_script");
             this.BUT_select_script.Name = "BUT_select_script";
+            this.BUT_select_script.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_select_script.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_select_script.UseVisualStyleBackColor = true;
             this.BUT_select_script.Click += new System.EventHandler(this.BUT_select_script_Click);
@@ -1715,8 +1452,10 @@
             // 
             this.BUT_PayloadFolder.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
             this.BUT_PayloadFolder.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_PayloadFolder.ColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))), ((int)(((byte)(3)))));
             resources.ApplyResources(this.BUT_PayloadFolder, "BUT_PayloadFolder");
             this.BUT_PayloadFolder.Name = "BUT_PayloadFolder";
+            this.BUT_PayloadFolder.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_PayloadFolder.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_PayloadFolder.UseVisualStyleBackColor = true;
             // 
@@ -1776,8 +1515,10 @@
             // 
             this.BUT_resetGimbalPos.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
             this.BUT_resetGimbalPos.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_resetGimbalPos.ColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))), ((int)(((byte)(3)))));
             resources.ApplyResources(this.BUT_resetGimbalPos, "BUT_resetGimbalPos");
             this.BUT_resetGimbalPos.Name = "BUT_resetGimbalPos";
+            this.BUT_resetGimbalPos.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_resetGimbalPos.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_resetGimbalPos.UseVisualStyleBackColor = true;
             this.BUT_resetGimbalPos.Click += new System.EventHandler(this.BUT_resetGimbalPos_Click);
@@ -1836,6 +1577,7 @@
             this.BUT_loadtelem.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_loadtelem, "BUT_loadtelem");
             this.BUT_loadtelem.Name = "BUT_loadtelem";
+            this.BUT_loadtelem.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_loadtelem.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_loadtelem.UseVisualStyleBackColor = true;
             this.BUT_loadtelem.Click += new System.EventHandler(this.BUT_loadtelem_Click);
@@ -1876,6 +1618,7 @@
             this.BUT_log2kml.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_log2kml, "BUT_log2kml");
             this.BUT_log2kml.Name = "BUT_log2kml";
+            this.BUT_log2kml.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_log2kml.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_log2kml.UseVisualStyleBackColor = true;
             this.BUT_log2kml.Click += new System.EventHandler(this.BUT_log2kml_Click);
@@ -1889,6 +1632,7 @@
             this.BUT_playlog.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_playlog, "BUT_playlog");
             this.BUT_playlog.Name = "BUT_playlog";
+            this.BUT_playlog.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_playlog.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_playlog.UseVisualStyleBackColor = true;
             this.BUT_playlog.Click += new System.EventHandler(this.BUT_playlog_Click);
@@ -1920,6 +1664,7 @@
             this.BUT_speed10.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed10, "BUT_speed10");
             this.BUT_speed10.Name = "BUT_speed10";
+            this.BUT_speed10.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed10.Tag = "10";
             this.BUT_speed10.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed10.UseVisualStyleBackColor = true;
@@ -1934,6 +1679,7 @@
             this.BUT_speed5.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed5, "BUT_speed5");
             this.BUT_speed5.Name = "BUT_speed5";
+            this.BUT_speed5.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed5.Tag = "5";
             this.BUT_speed5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed5.UseVisualStyleBackColor = true;
@@ -1948,6 +1694,7 @@
             this.BUT_speed2.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed2, "BUT_speed2");
             this.BUT_speed2.Name = "BUT_speed2";
+            this.BUT_speed2.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed2.Tag = "2";
             this.BUT_speed2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed2.UseVisualStyleBackColor = true;
@@ -1962,6 +1709,7 @@
             this.BUT_speed1.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed1, "BUT_speed1");
             this.BUT_speed1.Name = "BUT_speed1";
+            this.BUT_speed1.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed1.Tag = "1";
             this.BUT_speed1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed1.UseVisualStyleBackColor = true;
@@ -1976,6 +1724,7 @@
             this.BUT_speed1_2.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed1_2, "BUT_speed1_2");
             this.BUT_speed1_2.Name = "BUT_speed1_2";
+            this.BUT_speed1_2.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed1_2.Tag = "0.5";
             this.BUT_speed1_2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed1_2.UseVisualStyleBackColor = true;
@@ -1990,6 +1739,7 @@
             this.BUT_speed1_4.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed1_4, "BUT_speed1_4");
             this.BUT_speed1_4.Name = "BUT_speed1_4";
+            this.BUT_speed1_4.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed1_4.Tag = "0.25";
             this.BUT_speed1_4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed1_4.UseVisualStyleBackColor = true;
@@ -2004,6 +1754,7 @@
             this.BUT_speed1_10.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_speed1_10, "BUT_speed1_10");
             this.BUT_speed1_10.Name = "BUT_speed1_10";
+            this.BUT_speed1_10.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_speed1_10.Tag = "0.1";
             this.BUT_speed1_10.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_speed1_10.UseVisualStyleBackColor = true;
@@ -2037,6 +1788,7 @@
             this.BUT_DFMavlink.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_DFMavlink, "BUT_DFMavlink");
             this.BUT_DFMavlink.Name = "BUT_DFMavlink";
+            this.BUT_DFMavlink.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_DFMavlink.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_DFMavlink.UseVisualStyleBackColor = true;
             this.BUT_DFMavlink.Click += new System.EventHandler(this.BUT_DFMavlink_Click);
@@ -2045,8 +1797,10 @@
             // 
             this.BUT_georefimage.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
             this.BUT_georefimage.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_georefimage.ColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(43)))), ((int)(((byte)(58)))), ((int)(((byte)(3)))));
             resources.ApplyResources(this.BUT_georefimage, "BUT_georefimage");
             this.BUT_georefimage.Name = "BUT_georefimage";
+            this.BUT_georefimage.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_georefimage.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_georefimage.Click += new System.EventHandler(this.BUT_georefimage_Click);
             // 
@@ -2059,6 +1813,7 @@
             this.BUT_logbrowse.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_logbrowse, "BUT_logbrowse");
             this.BUT_logbrowse.Name = "BUT_logbrowse";
+            this.BUT_logbrowse.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_logbrowse.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_logbrowse.UseVisualStyleBackColor = true;
             this.BUT_logbrowse.Click += new System.EventHandler(this.BUT_logbrowse_Click);
@@ -2072,6 +1827,7 @@
             this.BUT_matlab.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_matlab, "BUT_matlab");
             this.BUT_matlab.Name = "BUT_matlab";
+            this.BUT_matlab.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_matlab.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_matlab.UseVisualStyleBackColor = true;
             this.BUT_matlab.Click += new System.EventHandler(this.BUT_matlab_Click);
@@ -2085,6 +1841,7 @@
             this.but_bintolog.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.but_bintolog, "but_bintolog");
             this.but_bintolog.Name = "but_bintolog";
+            this.but_bintolog.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.but_bintolog.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.but_bintolog.UseVisualStyleBackColor = true;
             this.but_bintolog.Click += new System.EventHandler(this.but_bintolog_Click);
@@ -2098,6 +1855,7 @@
             this.but_dflogtokml.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.but_dflogtokml, "but_dflogtokml");
             this.but_dflogtokml.Name = "but_dflogtokml";
+            this.but_dflogtokml.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.but_dflogtokml.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.but_dflogtokml.UseVisualStyleBackColor = true;
             this.but_dflogtokml.Click += new System.EventHandler(this.but_dflogtokml_Click);
@@ -2111,6 +1869,7 @@
             this.BUT_loganalysis.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.BUT_loganalysis, "BUT_loganalysis");
             this.BUT_loganalysis.Name = "BUT_loganalysis";
+            this.BUT_loganalysis.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.BUT_loganalysis.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BUT_loganalysis.UseVisualStyleBackColor = true;
             this.BUT_loganalysis.Click += new System.EventHandler(this.BUT_loganalysis_Click);
@@ -2295,6 +2054,7 @@
             this.but_disablejoystick.ColorNotEnabled = System.Drawing.Color.Empty;
             resources.ApplyResources(this.but_disablejoystick, "but_disablejoystick");
             this.but_disablejoystick.Name = "but_disablejoystick";
+            this.but_disablejoystick.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
             this.but_disablejoystick.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.but_disablejoystick.UseVisualStyleBackColor = true;
             this.but_disablejoystick.Click += new System.EventHandler(this.but_disablejoystick_Click);
@@ -2505,9 +2265,300 @@
             // 
             this.bindingSourceStatusTab.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // BUT_setmode
+            // 
+            resources.ApplyResources(this.BUT_setmode, "BUT_setmode");
+            this.BUT_setmode.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_setmode.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_setmode.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_setmode.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_setmode.ColorNotEnabled = System.Drawing.Color.Empty;
+            this.BUT_setmode.Name = "BUT_setmode";
+            this.BUT_setmode.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_setmode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_setmode, resources.GetString("BUT_setmode.ToolTip"));
+            this.BUT_setmode.UseVisualStyleBackColor = true;
+            this.BUT_setmode.Click += new System.EventHandler(this.BUT_setmode_Click);
+            // 
+            // BUT_quickauto
+            // 
+            resources.ApplyResources(this.BUT_quickauto, "BUT_quickauto");
+            this.BUT_quickauto.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_quickauto.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_quickauto.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_quickauto.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_quickauto.ColorNotEnabled = System.Drawing.Color.Empty;
+            this.BUT_quickauto.Name = "BUT_quickauto";
+            this.BUT_quickauto.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_quickauto.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_quickauto, resources.GetString("BUT_quickauto.ToolTip"));
+            this.BUT_quickauto.UseVisualStyleBackColor = true;
+            this.BUT_quickauto.Click += new System.EventHandler(this.BUT_quickauto_Click);
+            // 
+            // CMB_modes
+            // 
+            resources.ApplyResources(this.CMB_modes, "CMB_modes");
+            this.CMB_modes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_modes.DropDownWidth = 150;
+            this.CMB_modes.FormattingEnabled = true;
+            this.CMB_modes.Name = "CMB_modes";
+            this.CMB_modes.Click += new System.EventHandler(this.CMB_modes_Click);
+            // 
+            // BUT_setwp
+            // 
+            resources.ApplyResources(this.BUT_setwp, "BUT_setwp");
+            this.BUT_setwp.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_setwp.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_setwp.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_setwp.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_setwp.ColorNotEnabled = System.Drawing.Color.Empty;
+            this.BUT_setwp.Name = "BUT_setwp";
+            this.BUT_setwp.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_setwp.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_setwp, resources.GetString("BUT_setwp.ToolTip"));
+            this.BUT_setwp.UseVisualStyleBackColor = true;
+            this.BUT_setwp.Click += new System.EventHandler(this.BUT_setwp_Click);
+            // 
+            // BUT_quickmanual
+            // 
+            this.BUT_quickmanual.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_quickmanual.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_quickmanual.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_quickmanual.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_quickmanual.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_quickmanual, "BUT_quickmanual");
+            this.BUT_quickmanual.Name = "BUT_quickmanual";
+            this.BUT_quickmanual.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_quickmanual.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_quickmanual, resources.GetString("BUT_quickmanual.ToolTip"));
+            this.BUT_quickmanual.UseVisualStyleBackColor = true;
+            this.BUT_quickmanual.Click += new System.EventHandler(this.BUT_quickmanual_Click);
+            // 
+            // BUT_quickrtl
+            // 
+            this.BUT_quickrtl.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_quickrtl.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_quickrtl.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_quickrtl.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_quickrtl.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_quickrtl, "BUT_quickrtl");
+            this.BUT_quickrtl.Name = "BUT_quickrtl";
+            this.BUT_quickrtl.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_quickrtl.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_quickrtl, resources.GetString("BUT_quickrtl.ToolTip"));
+            this.BUT_quickrtl.UseVisualStyleBackColor = true;
+            this.BUT_quickrtl.Click += new System.EventHandler(this.BUT_quickrtl_Click);
+            // 
+            // CMB_mountmode
+            // 
+            resources.ApplyResources(this.CMB_mountmode, "CMB_mountmode");
+            this.CMB_mountmode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_mountmode.DropDownWidth = 150;
+            this.CMB_mountmode.FormattingEnabled = true;
+            this.CMB_mountmode.Name = "CMB_mountmode";
+            // 
+            // BUTrestartmission
+            // 
+            this.BUTrestartmission.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUTrestartmission.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUTrestartmission.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUTrestartmission.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUTrestartmission.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUTrestartmission, "BUTrestartmission");
+            this.BUTrestartmission.Name = "BUTrestartmission";
+            this.BUTrestartmission.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUTrestartmission.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUTrestartmission, resources.GetString("BUTrestartmission.ToolTip"));
+            this.BUTrestartmission.UseVisualStyleBackColor = true;
+            this.BUTrestartmission.Click += new System.EventHandler(this.BUTrestartmission_Click);
+            // 
+            // BUT_Homealt
+            // 
+            this.BUT_Homealt.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_Homealt.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_Homealt.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_Homealt.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_Homealt.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_Homealt, "BUT_Homealt");
+            this.BUT_Homealt.Name = "BUT_Homealt";
+            this.BUT_Homealt.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_Homealt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_Homealt, resources.GetString("BUT_Homealt.ToolTip"));
+            this.BUT_Homealt.UseVisualStyleBackColor = true;
+            this.BUT_Homealt.Click += new System.EventHandler(this.BUT_Homealt_Click);
+            // 
+            // BUT_RAWSensor
+            // 
+            this.BUT_RAWSensor.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_RAWSensor.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_RAWSensor.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_RAWSensor.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_RAWSensor.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_RAWSensor, "BUT_RAWSensor");
+            this.BUT_RAWSensor.Name = "BUT_RAWSensor";
+            this.BUT_RAWSensor.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_RAWSensor.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_RAWSensor, resources.GetString("BUT_RAWSensor.ToolTip"));
+            this.BUT_RAWSensor.UseVisualStyleBackColor = true;
+            this.BUT_RAWSensor.Click += new System.EventHandler(this.BUT_RAWSensor_Click);
+            // 
+            // BUT_joystick
+            // 
+            this.BUT_joystick.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_joystick.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_joystick.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_joystick.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_joystick.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_joystick, "BUT_joystick");
+            this.BUT_joystick.Name = "BUT_joystick";
+            this.BUT_joystick.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_joystick.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_joystick, resources.GetString("BUT_joystick.ToolTip"));
+            this.BUT_joystick.UseVisualStyleBackColor = true;
+            this.BUT_joystick.Click += new System.EventHandler(this.BUT_joystick_Click);
+            // 
+            // BUT_mountmode
+            // 
+            resources.ApplyResources(this.BUT_mountmode, "BUT_mountmode");
+            this.BUT_mountmode.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_mountmode.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_mountmode.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_mountmode.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_mountmode.ColorNotEnabled = System.Drawing.Color.Empty;
+            this.BUT_mountmode.Name = "BUT_mountmode";
+            this.BUT_mountmode.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_mountmode.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_mountmode, resources.GetString("BUT_mountmode.ToolTip"));
+            this.BUT_mountmode.UseVisualStyleBackColor = true;
+            this.BUT_mountmode.Click += new System.EventHandler(this.BUT_mountmode_Click);
+            // 
+            // BUT_ARM
+            // 
+            this.BUT_ARM.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_ARM.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_ARM.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_ARM.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_ARM.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_ARM, "BUT_ARM");
+            this.BUT_ARM.Name = "BUT_ARM";
+            this.BUT_ARM.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_ARM.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_ARM, resources.GetString("BUT_ARM.ToolTip"));
+            this.BUT_ARM.UseVisualStyleBackColor = true;
+            this.BUT_ARM.Click += new System.EventHandler(this.BUT_ARM_Click);
+            // 
+            // CMB_setwp
+            // 
+            resources.ApplyResources(this.CMB_setwp, "CMB_setwp");
+            this.CMB_setwp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_setwp.DropDownWidth = 150;
+            this.CMB_setwp.FormattingEnabled = true;
+            this.CMB_setwp.Items.AddRange(new object[] {
+            resources.GetString("CMB_setwp.Items")});
+            this.CMB_setwp.Name = "CMB_setwp";
+            this.CMB_setwp.Click += new System.EventHandler(this.CMB_setwp_Click);
+            // 
+            // BUT_resumemis
+            // 
+            this.BUT_resumemis.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_resumemis.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_resumemis.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_resumemis.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_resumemis.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_resumemis, "BUT_resumemis");
+            this.BUT_resumemis.Name = "BUT_resumemis";
+            this.BUT_resumemis.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_resumemis.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BUT_resumemis.UseVisualStyleBackColor = true;
+            this.BUT_resumemis.Click += new System.EventHandler(this.BUT_resumemis_Click);
+            // 
+            // BUTactiondo
+            // 
+            this.BUTactiondo.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.BUTactiondo, "BUTactiondo");
+            this.BUTactiondo.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUTactiondo.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUTactiondo.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUTactiondo.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUTactiondo.ColorNotEnabled = System.Drawing.Color.Empty;
+            this.BUTactiondo.ForeColor = System.Drawing.Color.Transparent;
+            this.BUTactiondo.Name = "BUTactiondo";
+            this.BUTactiondo.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUTactiondo.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUTactiondo, resources.GetString("BUTactiondo.ToolTip"));
+            this.BUTactiondo.UseVisualStyleBackColor = false;
+            this.BUTactiondo.Click += new System.EventHandler(this.BUTactiondo_Click);
+            // 
+            // CMB_action
+            // 
+            resources.ApplyResources(this.CMB_action, "CMB_action");
+            this.CMB_action.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMB_action.DropDownWidth = 150;
+            this.CMB_action.FormattingEnabled = true;
+            this.CMB_action.Name = "CMB_action";
+            // 
+            // BUT_clear_track
+            // 
+            this.BUT_clear_track.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_clear_track.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_clear_track.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_clear_track.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_clear_track.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_clear_track, "BUT_clear_track");
+            this.BUT_clear_track.Name = "BUT_clear_track";
+            this.BUT_clear_track.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_clear_track.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_clear_track, resources.GetString("BUT_clear_track.ToolTip"));
+            this.BUT_clear_track.UseVisualStyleBackColor = true;
+            this.BUT_clear_track.Click += new System.EventHandler(this.BUT_clear_track_Click);
+            // 
+            // BUT_abortland
+            // 
+            this.BUT_abortland.BGGradBot = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(145)))), ((int)(((byte)(252)))));
+            this.BUT_abortland.BGGradTop = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(139)))), ((int)(((byte)(252)))));
+            this.BUT_abortland.ColorMouseDown = System.Drawing.Color.Empty;
+            this.BUT_abortland.ColorMouseOver = System.Drawing.Color.Empty;
+            this.BUT_abortland.ColorNotEnabled = System.Drawing.Color.Empty;
+            resources.ApplyResources(this.BUT_abortland, "BUT_abortland");
+            this.BUT_abortland.Name = "BUT_abortland";
+            this.BUT_abortland.Outline = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(148)))), ((int)(((byte)(41)))));
+            this.BUT_abortland.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.toolTip1.SetToolTip(this.BUT_abortland, resources.GetString("BUT_abortland.ToolTip"));
+            this.BUT_abortland.UseVisualStyleBackColor = true;
+            this.BUT_abortland.Click += new System.EventHandler(this.BUT_abortland_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.BUT_abortland, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.modifyandSetLoiterRad, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_clear_track, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.CMB_action, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BUTactiondo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_resumemis, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.modifyandSetAlt, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.modifyandSetSpeed, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.CMB_setwp, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_ARM, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_mountmode, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_joystick, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_RAWSensor, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_Homealt, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BUTrestartmission, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.CMB_mountmode, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_quickrtl, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_quickmanual, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_setwp, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.CMB_modes, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_quickauto, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.BUT_setmode, 1, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
             // modifyandSetLoiterRad
             // 
             resources.ApplyResources(this.modifyandSetLoiterRad, "modifyandSetLoiterRad");
+            this.modifyandSetLoiterRad.BackColor = System.Drawing.Color.Transparent;
             this.modifyandSetLoiterRad.ButtonText = "Set Loiter Rad";
             this.modifyandSetLoiterRad.DecimalPlaces = 0;
             this.modifyandSetLoiterRad.Increment = new decimal(new int[] {
@@ -2536,6 +2587,7 @@
             // modifyandSetAlt
             // 
             resources.ApplyResources(this.modifyandSetAlt, "modifyandSetAlt");
+            this.modifyandSetAlt.BackColor = System.Drawing.Color.Transparent;
             this.modifyandSetAlt.ButtonText = "Change Alt";
             this.modifyandSetAlt.DecimalPlaces = 1;
             this.modifyandSetAlt.Increment = new decimal(new int[] {
@@ -2564,6 +2616,7 @@
             // modifyandSetSpeed
             // 
             resources.ApplyResources(this.modifyandSetSpeed, "modifyandSetSpeed");
+            this.modifyandSetSpeed.BackColor = System.Drawing.Color.Transparent;
             this.modifyandSetSpeed.ButtonText = "Change Speed";
             this.modifyandSetSpeed.DecimalPlaces = 1;
             this.modifyandSetSpeed.Increment = new decimal(new int[] {
@@ -2718,8 +2771,6 @@
             this.tabControlactions.ResumeLayout(false);
             this.contextMenuStripactionstab.ResumeLayout(false);
             this.tabActions.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tabPagemessages.ResumeLayout(false);
             this.tabPagemessages.PerformLayout();
             this.tabActionsSimple.ResumeLayout(false);
@@ -2761,6 +2812,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Zoomlevel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceStatusTab)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2773,13 +2826,7 @@
         private System.Windows.Forms.SplitContainer SubMainLeft;
         private System.Windows.Forms.ToolStripMenuItem goHereToolStripMenuItem;
         private Controls.HUD hud1;
-        private Controls.MyButton BUT_clear_track;
         private System.Windows.Forms.CheckBox CB_tuning;
-        private Controls.MyButton BUT_RAWSensor;
-        private Controls.MyButton BUTactiondo;
-        private Controls.MyButton BUTrestartmission;
-        private System.Windows.Forms.ComboBox CMB_action;
-        private Controls.MyButton BUT_Homealt;
         private System.Windows.Forms.TrackBar tracklog;
         private Controls.MyButton BUT_playlog;
         private Controls.MyButton BUT_loadtelem;
@@ -2798,15 +2845,7 @@
         public System.Windows.Forms.TabPage tabStatus;
         public System.Windows.Forms.TabPage tabActions;
         public System.Windows.Forms.TabPage tabTLogs;
-        private System.Windows.Forms.ComboBox CMB_modes;
-        private Controls.MyButton BUT_setmode;
-        private System.Windows.Forms.ComboBox CMB_setwp;
-        private Controls.MyButton BUT_setwp;
-        private Controls.MyButton BUT_quickmanual;
-        private Controls.MyButton BUT_quickrtl;
-        private Controls.MyButton BUT_quickauto;
         private Controls.MyButton BUT_log2kml;
-        private Controls.MyButton BUT_joystick;
         private System.Windows.Forms.ToolTip toolTip1;
         private Controls.MyLabel lbl_logpercent;
         private System.Windows.Forms.ToolStripMenuItem pointCameraHereToolStripMenuItem;
@@ -2819,10 +2858,6 @@
         private System.Windows.Forms.ToolStripMenuItem flyToHereAltToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flightPlannerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userItemsToolStripMenuItem;
-        //private Crom.Controls.Docking.DockContainer dockContainer1;
-        private Controls.MyButton BUT_ARM;
-        private Controls.ModifyandSet modifyandSetAlt;
-        private Controls.ModifyandSet modifyandSetSpeed;
         private System.Windows.Forms.ToolStripMenuItem triggerCameraToolStripMenuItem;
         private Controls.MyTrackBar TRK_zoom;
         private Controls.MyLabel LBL_logfn;
@@ -2874,8 +2909,6 @@
         private System.Windows.Forms.ToolStripMenuItem setHomeHereToolStripMenuItem;
         private MissionPlanner.Controls.Coords coords1;
         private Controls.MyButton BUT_matlab;
-        private System.Windows.Forms.ComboBox CMB_mountmode;
-        private Controls.MyButton BUT_mountmode;
         public Controls.WindDir windDir1;
         private Controls.MyButton but_bintolog;
         private Controls.MyButton but_dflogtokml;
@@ -2894,11 +2927,9 @@
         private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
         private Controls.DistanceBar distanceBar1;
         private System.Windows.Forms.ToolStripMenuItem takeOffToolStripMenuItem;
-        private Controls.MyButton BUT_resumemis;
         public System.Windows.Forms.TabPage tabPagePreFlight;
         private Controls.PreFlight.CheckListControl checkListControl1;
         private System.Windows.Forms.ToolStripMenuItem swapWithMapToolStripMenuItem;
-        private Controls.MyButton BUT_abortland;
         private Controls.MyButton but_disablejoystick;
         private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recordHudToAVIToolStripMenuItem;
@@ -2908,7 +2939,6 @@
         private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PointCameraCoordsToolStripMenuItem1;
-        private Controls.ModifyandSet modifyandSetLoiterRad;
         private System.Windows.Forms.ToolStripMenuItem onOffCameraOverlapToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altitudeAngelSettingsToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripQuickView;
@@ -2939,7 +2969,6 @@
         private Controls.MyButton BUT_georefimage;
         private System.Windows.Forms.ToolStripMenuItem poiatcoordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flyToCoordsToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStripMenuItem setBatteryCellCountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undockToolStripMenuItem;
@@ -2952,5 +2981,28 @@
         private Controls.QuickView quickView3;
         private Controls.QuickView quickView2;
         private Controls.QuickView quickView1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Controls.MyButton BUT_abortland;
+        private Controls.ModifyandSet modifyandSetLoiterRad;
+        private Controls.MyButton BUT_clear_track;
+        private System.Windows.Forms.ComboBox CMB_action;
+        private Controls.MyButton BUTactiondo;
+        private Controls.MyButton BUT_resumemis;
+        private Controls.ModifyandSet modifyandSetAlt;
+        private Controls.ModifyandSet modifyandSetSpeed;
+        private System.Windows.Forms.ComboBox CMB_setwp;
+        private Controls.MyButton BUT_ARM;
+        private Controls.MyButton BUT_mountmode;
+        private Controls.MyButton BUT_joystick;
+        private Controls.MyButton BUT_RAWSensor;
+        private Controls.MyButton BUT_Homealt;
+        private Controls.MyButton BUTrestartmission;
+        private System.Windows.Forms.ComboBox CMB_mountmode;
+        private Controls.MyButton BUT_quickrtl;
+        private Controls.MyButton BUT_quickmanual;
+        private Controls.MyButton BUT_setwp;
+        private System.Windows.Forms.ComboBox CMB_modes;
+        private Controls.MyButton BUT_quickauto;
+        private Controls.MyButton BUT_setmode;
     }
 }
