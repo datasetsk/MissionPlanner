@@ -347,8 +347,8 @@
             this.hud1.gpshdop = 0F;
             this.hud1.gpshdop2 = 0F;
             this.hud1.groundalt = 0F;
-            this.hud1.groundColor1 = System.Drawing.Color.Chocolate;
-            this.hud1.groundColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.hud1.groundColor1 = System.Drawing.Color.DarkGoldenrod;
+            this.hud1.groundColor2 = System.Drawing.Color.RosyBrown;
             this.hud1.groundcourse = 0F;
             this.hud1.groundspeed = 0F;
             this.hud1.heading = 0F;
@@ -367,7 +367,7 @@
             this.hud1.roll = 0F;
             this.hud1.Russian = false;
             this.hud1.skyColor1 = System.Drawing.Color.DodgerBlue;
-            this.hud1.skyColor2 = System.Drawing.Color.DeepSkyBlue;
+            this.hud1.skyColor2 = System.Drawing.Color.SkyBlue;
             this.hud1.speedunit = null;
             this.hud1.SSA = 0F;
             this.hud1.status = false;
@@ -2304,7 +2304,7 @@
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 180D;
+            this.windDir1.Direction = 360D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;

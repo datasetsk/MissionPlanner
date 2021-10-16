@@ -2537,8 +2537,8 @@ namespace MissionPlanner.GCSViews
             else
             {
                 // orange
-                hud1.groundColor1 = Color.FromArgb(255, 128, 0);
-                hud1.groundColor2 = Color.FromArgb(128, 64, 0);
+                hud1.groundColor1 = Color.DarkGoldenrod;
+                hud1.groundColor2 = Color.RosyBrown;
             }
 
             Settings.config["groundColorToolStripMenuItem"] = groundColorToolStripMenuItem.Checked.ToString();
