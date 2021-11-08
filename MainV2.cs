@@ -1518,32 +1518,9 @@ namespace MissionPlanner
                     break;
                 case "AUTO":
                     // do autoscan
-                    Comms.CommsSerialScan.Scan(true);
-                    DateTime deadline = DateTime.Now.AddSeconds(50);
-                    ProgressReporterDialogue prd = new ProgressReporterDialogue();
-                    prd.UpdateProgressAndStatus(-1, "Waiting for ports");
-                    prd.DoWork += sender =>
-                    {
-                        while (Comms.CommsSerialScan.foundport == false || Comms.CommsSerialScan.run == 1)
-                        {
-                            System.Threading.Thread.Sleep(500);
-                            Console.WriteLine("wait for port " + CommsSerialScan.foundport + " or " +
-                                              CommsSerialScan.run);
-                            if (sender.doWorkArgs.CancelRequested)
-                            {
-                                sender.doWorkArgs.CancelAcknowledged = true;
-                                return;
-                            }
-
-                            if (DateTime.Now > deadline)
-                            {
-                                _connectionControl.IsConnected(false);
-                                throw new Exception(Strings.Timeout);
-                            }
-                        }
-                    };
-                    prd.RunBackgroundOperationAsync();
-                    return;
+                    comPort.BaseStream = new TcpSerial();
+                    _connectionControl.CMB_serialport.Text = "TCP";
+                    break;
                 default:
                     comPort.BaseStream = new SerialPort();
                     break;

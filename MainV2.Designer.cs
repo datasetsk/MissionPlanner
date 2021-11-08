@@ -58,6 +58,7 @@ namespace MissionPlanner
             this.Menuvideodevicetext = new System.Windows.Forms.ToolStripTextBox();
             this.MenuVideoDevice = new System.Windows.Forms.ToolStripComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.menu = new MissionPlanner.Controls.MyButton();
@@ -258,6 +259,7 @@ namespace MissionPlanner
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.status1);
@@ -265,6 +267,12 @@ namespace MissionPlanner
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseLeave += new System.EventHandler(this.MainMenu_MouseLeave);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -357,5 +365,6 @@ namespace MissionPlanner
         private System.Windows.Forms.ToolStripComboBox nwport;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }
